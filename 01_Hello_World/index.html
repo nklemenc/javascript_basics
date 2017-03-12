@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Moving Shape</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
     <script>
-      // JavaScript function definition here
-    </script> 
-  </head>
-  
-  <body>
-    <!-- Your page here (can include more script tags) -->
-    
-  </body>
+
+
+    function myFunction(){
+      var textArray = ["Maybe Here", "Now Me", "Try This", "And Another", "Once More", "Warmer"];
+      var height = $(window).height() - 100;
+      var width = $(window).width() - 100;
+      for (i = 0; i < 3; i++){
+        var horizontalPosition = Math.random() * (Math.ceil(width));
+        var verticalPosition = Math.random() * (Math.ceil(height));
+              $("div").animate({left: horizontalPosition+"px", top: verticalPosition+"px"});
+      }
+
+            document.getElementById("mainShape").innerHTML = textArray[Math.floor(Math.random()*textArray.length)];
+  }
+    </script>
+    </head>
+    <body>
+
+
+
+    <div id = "mainShape" onclick = "myFunction()" style="background:#ff5733;height:100px;width:100px;line-height:100px;text-align:center;position:relative;">Click Me</div>
+
+    </body>
 </html>
